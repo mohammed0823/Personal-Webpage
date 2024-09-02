@@ -1,15 +1,38 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <IntroPlate></IntroPlate>
+  </div>
+  <div>
+    <div class="ItemHolder">
+      <button @click="ActivePage = 'Career'">Career</button>
+      <button @click="ActivePage = 'Projects'">Projects</button>
+      <button @click="ActivePage = 'Education'">Education</button>
+      <div> 
+          <component :is="ActivePage" ></component>
+      </div>
+    </div>
+  </div>
+  <!--<HelloWorld msg="Welcome to Your Vue.js App"/> -->
 </template>
-
+ 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+//import HelloWorld from './components/HelloWorld.vue'
+import IntroPlate from './components/IntroPlate.vue'
+import Education from './components/education.vue';
+import Career from './components/career.vue';
+import Projects from './components/projects.vue';
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    IntroPlate, Education, Career, Projects
+  },
+
+data() {
+    return {
+      ActivePage: 'Career'
+    };
   }
 }
 </script>
@@ -23,4 +46,12 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+.ItemHolder{
+  width:80%;
+  margin: auto;
+  background-color: lightslategray;
+}
+
+
 </style>
