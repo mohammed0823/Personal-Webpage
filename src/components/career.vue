@@ -1,12 +1,12 @@
 <template>
     <div>
-        <h3>Career</h3>
+        <h1>Career</h1>
         <SlideShowEntry 
-            :Title="'Chua'"
-            :SubTitles="['Subtitle 1', 'Subtitle 2', 'ae']"
-            :text="['Text 1', 'Text 2','aa']"
+            :Title="'foobar '"
+            :SubTitles="['foooooo', 'Subtitle 2', 'ae']"
+            :text="['IM SO COOL!! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic facilis ullam consectetur, at fuga sequi qui rerum omnis cum amet a accusamus beatae suscipit obcaecati harum necessitatibus quam exercitationem excepturi.', 'bbbbbbbbbbbbbbbbbb','aa']"
             :Images="['1.jpg', '3.png','2.jpg']"
-        
+            :icons="['3.png', 'logo.png']"
         ></SlideShowEntry>
 
     </div>

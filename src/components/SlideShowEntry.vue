@@ -1,15 +1,31 @@
 <template>
-    <div>
-        <h3>{{ Title }} </h3>
-        <div class="gallery">
-          <button v-on:click="prev">❮</button>
-          <div class="content">
-            <h4>{{ currentSubtitle }}</h4>
-            <p>{{ currentText }}</p>
-            <img :src="currentImage" />
+    <div class="slBody">
+        <div class="mini-header">
+          <div class="iconContainer">
+            <h2 class="h1title">{{ Title }} </h2>
           </div>
-          <button v-on:click="next">❯</button>
+          <div class="iconContainer">
+            <img v-for="(logo, index) in icons" :key="index" :src="require(`@/assets/${logo}`)" class="icon"/>
+          </div>
         </div>
+        <div class="gallery">
+          <button id="btnbw" class="btnSlide" v-on:click="prev"> ❮ </button>
+          <button id="btnfw" class="btnSlide" v-on:click="next"> ❯ </button>
+          <div class="content">
+            <div id="img_container">
+              <img :src="currentImage" style="width:80%; height: 80%;"/>
+
+            </div>
+            <div id="text_container">
+              <h4>{{ currentSubtitle }}</h4>
+              <p>{{ currentText }}</p>
+            </div>
+
+           
+          </div>
+          
+        </div>
+        
 
     </div>
   </template>
@@ -30,6 +46,9 @@
        },
        Images: {
          type: Array
+       },
+       icons: {
+        type: Array
        }
    },
    data() {
@@ -61,6 +80,19 @@
   
   <!-- Add "scoped" attribute to limit CSS to this component only -->
   <style scoped>
+
+
+
+  #text_container{
+    width: 50%;
+    float:left;
+    padding-top: auto;
+    padding-bottom: auto;
+  }
+  #img_container{
+    width: 50%;
+    
+  }
   h3 {
     margin: 40px 0 0;
   }
@@ -75,5 +107,74 @@
   a {
     color: #42b983;
   }
+
+  .gallery{
+    position: relative;
+  }
+
+  .slBody {
+  background-color: azure;
+  margin: 1em;
+  padding: 1em;
+  border-radius: 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon {
+  width: 10%;
+  padding: 5px;
+}
+
+.h1title {
+  margin-right: auto;
+}
+
+.gallery {
+  position: relative;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+
+#img_container {
+  width: 50%;
+}
+
+#text_container {
+  width: 50%;
+}
+
+.btnSlide {
+  font-size: 300%;
+  position: absolute;
+  border-radius: 40%;
+  opacity: 70%;
+}
+
+#btnfw {
+  top: 40%;
+  left: 42.5%;
+}
+
+#btnbw {
+  top: 40%;
+  left: 5%;
+}
+
+.mini-header{
+  width: 100%;
+}
+
   </style>
   
