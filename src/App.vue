@@ -4,9 +4,11 @@
   </div>
   <div>
     <div class="ItemHolder">
-      <button @click="ActivePage = 'Career'">Career</button>
-      <button @click="ActivePage = 'Projects'">Projects</button>
-      <button @click="ActivePage = 'Education'">Education</button>
+      <div class="btnSelections">
+        <button class="btnSelect" @click="ActivePage = 'Career'">Career</button>
+        <button class="btnSelect" @click="ActivePage = 'Projects'">Projects</button>
+        <button class="btnSelect" @click="ActivePage = 'Education'">Education</button>
+      </div>
       <div> 
           <component :is="ActivePage" ></component>
       </div>
@@ -50,8 +52,17 @@ data() {
 .ItemHolder{
   width:80%;
   margin: auto;
-  background-color: lightslategray;
+  background-color: rgb(19, 22, 18);
+  border-radius: 3%;
 }
 
+.btnSelections{
+  margin: auto;
+  padding: 1%;
+}
+
+.btnSelect{
+  font-size: larger;
+}
 
 </style>

@@ -4,7 +4,11 @@
             <img  class="facePic" src="@/assets/me.jpg">
         </div>
         <div class="imSoCool">
-             <p>IM SO COOL!! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic facilis ullam consectetur, at fuga sequi qui rerum omnis cum amet a accusamus beatae suscipit obcaecati harum necessitatibus quam exercitationem excepturi.</p>
+             <p>Michael Penfield is a student at Penn State University, pursuing dual bachelor’s 
+              degrees in Computer Science and Mathematics. A dedicated developer with over six years 
+              of personal experience and a year of professional experience, Mike has been honing 
+              his software development skills since his formal education began in 2019.
+             </p>
         </div>
     </div>
   </template>
@@ -28,9 +32,7 @@
     display: inline-block;
     margin: 0 10px;
   }
-  a {
-    color: #42b983;
-  }
+
 
   .facePic{
     max-width: 110%;
@@ -40,7 +42,9 @@
 
   .faceContainer{
     padding: 3em;
-    background-color: black;
+    margin-left: 10%;
+    width: 15%;
+    
   }
 
   .container{
@@ -49,11 +53,13 @@
 
   }
 
-  .imSoCool{
- 
-    font-size: xx-large;
-    padding: 10%;
-
-  }
+  .imSoCool {
+  font-size: 1.5em; /* Use em for responsive font size */
+  line-height: 2 ; /* Increase line spacing for readability */
+  padding: 2em; /* Adjust padding for better spacing around text */
+  margin: 0 auto; /* Center align text block */
+  max-width: 50%; /* Limit line length for better readability */
+  text-align: left;
+}
   </style>
   

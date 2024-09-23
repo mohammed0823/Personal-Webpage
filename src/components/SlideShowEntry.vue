@@ -1,19 +1,19 @@
 <template>
     <div class="slBody">
+      <div>
         <div class="mini-header">
-          <div class="iconContainer">
-            <h2 class="h1title">{{ Title }} </h2>
-          </div>
+          <h1 class="h1title">{{ Title }} </h1>
           <div class="iconContainer">
             <img v-for="(logo, index) in icons" :key="index" :src="require(`@/assets/${logo}`)" class="icon"/>
           </div>
         </div>
+        </div> 
         <div class="gallery">
           <button id="btnbw" class="btnSlide" v-on:click="prev"> ❮ </button>
           <button id="btnfw" class="btnSlide" v-on:click="next"> ❯ </button>
           <div class="content">
             <div id="img_container">
-              <img :src="currentImage" style="width:80%; height: 80%;"/>
+              <img :src="currentImage" style="width:100%; height: 100%; border-radius:5%;"/>
 
             </div>
             <div id="text_container">
@@ -88,6 +88,7 @@
     float:left;
     padding-top: auto;
     padding-bottom: auto;
+    margin: 10%;
   }
   #img_container{
     width: 50%;
@@ -104,22 +105,23 @@
     display: inline-block;
     margin: 0 10px;
   }
-  a {
-    color: #42b983;
-  }
+
 
   .gallery{
     position: relative;
   }
 
   .slBody {
-  background-color: azure;
-  margin: 1em;
-  padding: 1em;
-  border-radius: 2%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    border-width: thin;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    background-color: rgb(34, 39, 39);
+    margin: 1em;
+    padding: 1em;
+    border-radius: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .iconContainer {
@@ -159,21 +161,24 @@
   font-size: 300%;
   position: absolute;
   border-radius: 40%;
-  opacity: 70%;
 }
 
 #btnfw {
   top: 40%;
-  left: 42.5%;
+  left: 37%;
 }
 
 #btnbw {
   top: 40%;
-  left: 5%;
+  left: 0%;
 }
 
 .mini-header{
   width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
 }
 
   </style>
