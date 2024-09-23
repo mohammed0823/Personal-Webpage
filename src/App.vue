@@ -40,6 +40,10 @@ data() {
 </script>
 
 <style>
+body{
+ background-image: linear-gradient(black, rgb(126, 115, 115));
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -47,6 +51,7 @@ data() {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  background-image: linear-gradient(black, rgb(126, 115, 115));
 }
 
 .ItemHolder{
@@ -54,6 +59,11 @@ data() {
   margin: auto;
   background-color: rgb(19, 22, 18);
   border-radius: 3%;
+  border-color: black;
+  border-width: thin;
+  border-width: thin;
+  border-style: solid;
+  border-color: rgb(0, 0, 0);
 }
 
 .btnSelections{

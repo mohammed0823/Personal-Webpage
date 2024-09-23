@@ -54,6 +54,7 @@
   }
 
   .imSoCool {
+  color: rgb(255, 255, 255);
   font-size: 1.5em; /* Use em for responsive font size */
   line-height: 2 ; /* Increase line spacing for readability */
   padding: 2em; /* Adjust padding for better spacing around text */
