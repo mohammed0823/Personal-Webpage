@@ -1,9 +1,14 @@
 <template>
     <div class="docWidget">
       <h2>{{ title }}</h2>
-      <div class="pdf-container">
-        <!-- Embedding the PDF using an iframe -->
-        <iframe :src="pdfSrc" type="application/pdf" width="100%" height="100%"></iframe>
+      <div class="content">
+        <div class="pdf-container">
+          <!-- Embedding the PDF using an iframe -->
+          <iframe :src="pdfSrc" type="application/pdf" width="100%" height="100%"></iframe>
+        </div>
+        <div class="textContainer">
+          <p>{{text}}</p>
+        </div>
       </div>
     </div>
   </template>
@@ -19,6 +24,10 @@
       title: {
         type: String,
         default: "Document Viewer"
+      },
+      text: {
+        type: String,
+        required:false,
       }
     },
     computed: {
@@ -31,6 +40,19 @@
   </script>
   
   <style scoped>
+
+  .textContainer{
+    text-align: left;
+    width: 50%;
+    float: left;
+    color: white !important;
+    padding-top: auto;
+    padding-bottom: auto;
+    margin: 10%;
+
+  }
+
+
   h1 {
     color: white;
     text-align: center;
@@ -39,15 +61,20 @@
   h2{
     color: blanchedalmond;
   }
+
+  .content{
+    display: flex;
+    justify-content: space-between;
+    padding:1.5em;
+  }
   
-  .pdf-container {
-    
+  .pdf-container { 
     width: 50%;
     height: 600px;
     border: 2px solid #42b983;
     border-radius: 8px;
     overflow: hidden;
-    margin: auto
+    float: left;
   }
   
   iframe {

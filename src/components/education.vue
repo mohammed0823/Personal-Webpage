@@ -2,9 +2,10 @@
     <div>
         <h1>Education</h1>
         <docWidget 
-        :title='"Erie county technical school"'
+        :title="'Erie County Technical School'"
         :pdfFile="'/NOCTI.pdf'"
-        ></docWidget>
+        :text="'My formal education in Programming began at the start of my sophomore year of highschool at Erie County Technical School. I would spend half of my time spent in a typical highschool day was at ECTS. This is where I learned first learned Visual Basic and the .Net framework, then moved on to C++ and Java, then onto web development with html, css, javascript, and PHP. For my senior project I created a snack cart website'"
+      ></docWidget>
     </div>
   </template>
   
