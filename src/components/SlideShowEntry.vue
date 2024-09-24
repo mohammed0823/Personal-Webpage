@@ -124,9 +124,9 @@ li {
   border-style: solid;
   border-color: rgb(0, 0, 0);
   background-color: rgb(34, 39, 39);
-  margin: 1em;
+  margin: 1.5em;
   padding: 1em;
-  border-radius: 2%;
+  border-radius: 5%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

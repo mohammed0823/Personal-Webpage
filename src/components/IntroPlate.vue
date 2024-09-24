@@ -62,5 +62,14 @@
   max-width: 50%; /* Limit line length for better readability */
   text-align: left;
 }
+
+.iconContainer {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
   </style>
   

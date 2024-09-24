@@ -1,6 +1,11 @@
 <template>
     <div class="docWidget">
-      <h2>{{ title }}</h2>
+    <div class="mini-header">
+      <h1>{{title}}</h1>
+      <div class="iconContainer">
+        <h2>{{date}}</h2>
+      </div>
+    </div>
       <div class="content">
         <div class="pdf-container">
           <!-- Embedding the PDF using an iframe -->
@@ -28,6 +33,10 @@
       text: {
         type: String,
         required:false,
+      },
+      date: {
+        type: String,
+        required:false,
       }
     },
     computed: {
@@ -42,6 +51,7 @@
   <style scoped>
 
   .textContainer{
+    line-height: 2;
     text-align: left;
     width: 50%;
     float: left;
@@ -50,6 +60,19 @@
     padding-bottom: auto;
     margin: 10%;
 
+  }
+  
+  .docWidget{
+    border-width: thin;
+  border-style: solid;
+  border-color: rgb(0, 0, 0);
+  background-color: rgb(34, 39, 39);
+  margin: 2em;
+  padding: 1em;
+  border-radius: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   }
 
 
@@ -80,5 +103,18 @@
   iframe {
     border: none;
   }
+
+  .mini-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Ensures the title and date are spaced */
+  align-items: center;
+}
+
+.iconContainer {
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+}
   </style>
   

@@ -61,6 +61,7 @@ body{
 }
 
 
+
 .styled-button:hover {
   background-color: #3a9e73;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
@@ -111,5 +112,9 @@ body{
 .btnSelect{
   font-size: larger;
 }
+
+ p { 
+   text-indent: 4em; /* or 15px, or 5%, 2rem or 3vw */
+ }
 
 </style>
