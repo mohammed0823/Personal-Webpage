@@ -82,6 +82,7 @@ text-align: left;
 }
 
 .title-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
