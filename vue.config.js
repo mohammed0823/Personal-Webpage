@@ -1,5 +1,5 @@
 const { defineConfig } = require('@vue/cli-service')
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/Portfolio_1/' : '/'
+  publicPath: process.env.NODE_ENV === 'production' ? '/rwp24/' : '/'
 };
 
