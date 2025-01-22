@@ -9,7 +9,7 @@
     name: 'MyComponent',
     data() {
       return {
-        message: 'Helloojdjdjdjjdooo, Vue!'
+        message: 'Hellaaaoojdjdjdjjdooo, Vue!'
       };
     }
   };
