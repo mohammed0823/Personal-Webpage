@@ -4,44 +4,101 @@
   </div>
   <div>
     <div class="ItemHolder">
-      <div class="btnSelections">
-        <button class="styled-button" @click="ActivePage = 'Career'">Career</button>
-        <button class="styled-button" @click="ActivePage = 'Projects'">Projects</button>
-        <button class="styled-button" @click="ActivePage = 'Education'">Education</button>
+      <div class="itemPost"> 
+        <InfoPost
+          Title="Project Nexus"
+          :Image="require('@/assets/3.jpg')"
+          Text="A dynamic and visually stunning dashboard application that integrates real-time data visualization and analytics. Designed for tracking financial markets, Project Nexus leverages D3.js for interactive graphs and Node.js for backend data aggregation. Features include customizable widgets, predictive analytics, and multi-language support." ></InfoPost>
       </div>
-      <div> 
-          <component :is="ActivePage" ></component>
-      </div>
-    </div>
+      <div class="itemPost"> 
+        <InfoPost
+        Title="EcoTrail"
+        Text="A mobile app built to promote eco-friendly habits by tracking your carbon footprint and providing personalized tips to reduce emissions. Developed using Flutter for cross-platform compatibility, EcoTrail uses machine learning to analyze user habits and provide actionable recommendations. It also integrates gamification features, encouraging users to achieve sustainability milestones."
+        :Image="require('@/assets/2.png')"
+       ></InfoPost>
+     </div> 
+     <div class="itemPost"> 
+      <InfoPost
+      Title="OpenAI founder"
+      :Image="require('@/assets/chatisthisreal.png')"
+      Text="I utilized advanced AI and natural language processing technologies to develop ChatGPT, leveraging tools and frameworks that enhance conversational AI capabilities. By integrating machine learning algorithms, large-scale language models, and fine-tuning techniques, I optimized ChatGPT to deliver human-like interactions. Additionally, I relied on iterative feedback loops and cutting-edge APIs to refine its performance, ensuring a seamless and intelligent user experience."
+     ></InfoPost>    
+   </div> 
+ 
+   <div class="itemPost"> 
+    <InfoPost
+      Title="GameForge"
+      Text="A procedurally generated 2D adventure game that offers endless levels of fun. Created using Unity and C#, GameForge features a pixel-art aesthetic and AI-driven enemy behavior for unique gameplay each time. The game includes a level editor, allowing players to design and share their creations."
+      :Image="require('@/assets/real.jpg')"
+      ></InfoPost>
   </div>
+
+
+  <div class="itemPost"> 
+    <InfoPost
+      Title="CineMatch"
+      Text="A movie recommendation system powered by collaborative filtering and deep learning. CineMatch analyzes user preferences and provides tailored suggestions in a sleek, React-based UI. The backend, powered by Python's Flask and PostgreSQL, ensures seamless data handling, while integration with external APIs (like TMDB) enriches the user experience."
+      :Image="require('@/assets/cine.jpg')"
+      ></InfoPost>
+  </div>
+
+  
+  <div class="itemPost"> 
+    <InfoPost
+      Title="Latin"
+      Text="Lorem ipsum began as scrambled, nonsensical Latin derived from Cicero's 1st-century BC text De Finibus Bonorum et Malorum. Lorem ipsum began as scrambled, nonsensical Latin derived from Cicero's 1st-century BC text De Finibus Bonorum et Malorum."
+      :Image="require('@/assets/code.png')"
+      ></InfoPost>
+  </div>
+
+  <div class="itemPost"> 
+    <InfoPost
+      Title="HealthSync"
+      Text="A full-stack web application for managing medical records and tracking fitness goals. HealthSync uses a secure authentication system and an encrypted PostgreSQL database to protect sensitive user data. With React on the front end and Express.js on the back end, the app provides an intuitive interface for users to schedule appointments, monitor their health stats, and access reports."
+      :Image="require('@/assets/1.jpg')"
+      ></InfoPost>
+  </div>
+
+  
+</div>
+  </div>
+  
+
   <!--<HelloWorld msg="Welcome to Your Vue.js App"/> -->
 </template>
  
 <script>
 //import HelloWorld from './components/HelloWorld.vue'
 import IntroPlate from './components/IntroPlate.vue'
-import Education from './components/education.vue';
-import Career from './components/career.vue';
-import Projects from './components/projects.vue';
+import InfoPost from './components/InfoPost.vue'
 
 
 export default {
   name: 'App',
   components: {
-    IntroPlate, Education, Career, Projects
+    IntroPlate,
+    InfoPost
   },
 
-data() {
-    return {
-      ActivePage: 'Career'
-    };
-  }
 }
 </script>
 
 <style>
 body{
  background-image: linear-gradient(black, rgb(126, 115, 115));
+}
+
+.itemPost {
+  /* Optional, you can change this */
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: flex-start;
+  align-items: stretch;
+  height: 100%;
+  margin-bottom: 15px;
 }
 
 .styled-button {
@@ -58,6 +115,7 @@ body{
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
 }
 
 
@@ -92,16 +150,28 @@ body{
   background-image: linear-gradient(black, rgb(126, 115, 115));
 }
 
-.ItemHolder{
-  width:80%;
+.InfoPost {
+  flex-grow: 1; /* Allow InfoPost to fill all remaining space inside .itemPost */
+  display: flex;
+  flex-direction: column; /* Stack the content inside InfoPost vertically */
+}
+
+
+.ItemHolder {
+  
+  background-color:  rgb(126, 115, 115);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns, each with equal width */
+  gap: 10px; /* Adds space between the items */
+  margin-bottom: 15%;
+  width: 100%;
   margin: auto;
-  background-color: rgb(19, 22, 18);
   border-radius: 3%;
   border-color: black;
-  border-width: thin;
-  border-width: thin;
-  border-style: solid;
   border-color: rgb(0, 0, 0);
+  min-height: 100vh; /* Ensures it takes at least the full height of the page */
+  padding-bottom: 20px; /* Adds some space at the bottom */
+  padding-top: 20px; /* Optional, adds some space at the top */
 }
 
 .btnSelections{
@@ -116,5 +186,33 @@ body{
  p { 
    text-indent: 4em; /* or 15px, or 5%, 2rem or 3vw */
  }
+
+
+ @keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+  75% { transform: rotate(-2deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.itemPost {
+  /* Existing styles */
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: flex-start;
+  align-items: stretch;
+  height: 100%;
+  transition: transform 0.3s ease; /* Smooth transition when hover ends */
+}
+
+/* Add wiggle effect on hover */
+.itemPost:hover {
+  animation: wiggle 0.3s ease-in-out; /* Add the wiggle animation */
+  cursor: pointer; /* Change the cursor to pointer for better UX */
+}
 
 </style>

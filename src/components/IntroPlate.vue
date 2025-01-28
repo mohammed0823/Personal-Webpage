@@ -4,11 +4,7 @@
             <img  class="facePic" src="@/assets/me.jpg">
         </div>
         <div class="imSoCool">
-             <p>Michael Penfield is a student at Penn State University, pursuing dual bachelor’s 
-              degrees in Computer Science and Mathematics. A dedicated developer with over six years 
-              of personal experience and a year of professional experience, Mike has been honing 
-              his software development skills since his formal education began in 2019.
-             </p>
+             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores consequatur voluptate aspernatur eligendi fugit perspiciatis nesciunt natus provident voluptatum quam tenetur sed consequuntur ducimus praesentium, illum est iusto laudantium vel!</p>
         </div>
     </div>
   </template>
@@ -69,6 +65,10 @@
   justify-content: flex-end;
   align-items: center;
   gap: 10px;
+}
+
+img {
+  width: auto;
 }
 
   </style>
