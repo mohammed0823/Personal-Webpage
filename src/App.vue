@@ -2,28 +2,35 @@
   <div>
     <IntroPlate></IntroPlate>
   </div>
+  
+<div class="content">
   <div>
     <div class="ItemHolder">
-      <div class="itemPost"> 
-        <InfoPost
-          Title="Project Nexus"
-          :Image="require('@/assets/3.jpg')"
-          Text="A dynamic and visually stunning dashboard application that integrates real-time data visualization and analytics. Designed for tracking financial markets, Project Nexus leverages D3.js for interactive graphs and Node.js for backend data aggregation. Features include customizable widgets, predictive analytics, and multi-language support." ></InfoPost>
-      </div>
-      <div class="itemPost"> 
-        <InfoPost
-        Title="EcoTrail"
-        Text="A mobile app built to promote eco-friendly habits by tracking your carbon footprint and providing personalized tips to reduce emissions. Developed using Flutter for cross-platform compatibility, EcoTrail uses machine learning to analyze user habits and provide actionable recommendations. It also integrates gamification features, encouraging users to achieve sustainability milestones."
-        :Image="require('@/assets/2.png')"
-       ></InfoPost>
-     </div> 
-     <div class="itemPost"> 
+     <div class="itemPost" @click="showProject('ProjectNexus')"> 
+       <InfoPost
+         Title="Project Nexus"
+         :Image="require('@/assets/3.jpg')"
+         Text="A dynamic and visually stunning dashboard application that integrates real-time data visualization and analytics. Designed for tracking financial markets, Project Nexus leverages D3.js for interactive graphs and Node.js for backend data aggregation. Features include customizable widgets, predictive analytics, and multi-language support." ></InfoPost>
+     </div>
+
+
+     <div class="itemPost" @click="showProject('EcoTrail')"> 
+       <InfoPost
+       Title="EcoTrail"
+       Text="A mobile app built to promote eco-friendly habits by tracking your carbon footprint and providing personalized tips to reduce emissions. Developed using Flutter for cross-platform compatibility, EcoTrail uses machine learning to analyze user habits and provide actionable recommendations. It also integrates gamification features, encouraging users to achieve sustainability milestones."
+       :Image="require('@/assets/2.png')"
+      ></InfoPost>
+    </div> 
+
+
+    <div class="itemPost"> 
       <InfoPost
       Title="OpenAI founder"
       :Image="require('@/assets/chatisthisreal.png')"
       Text="I utilized advanced AI and natural language processing technologies to develop ChatGPT, leveraging tools and frameworks that enhance conversational AI capabilities. By integrating machine learning algorithms, large-scale language models, and fine-tuning techniques, I optimized ChatGPT to deliver human-like interactions. Additionally, I relied on iterative feedback loops and cutting-edge APIs to refine its performance, ensuring a seamless and intelligent user experience."
      ></InfoPost>    
    </div> 
+
  
    <div class="itemPost"> 
     <InfoPost
@@ -51,6 +58,7 @@
       ></InfoPost>
   </div>
 
+
   <div class="itemPost"> 
     <InfoPost
       Title="HealthSync"
@@ -59,10 +67,44 @@
       ></InfoPost>
   </div>
 
-  
-</div>
+
+  <div class="popup-holder">
+    <PopupPost v-if="activePopup === 'EcoTrail'" @close="closePopup">
+      <template #content>
+        <h2>EcoTrail</h2>
+        <div class="img_container">
+          <img src="@/assets/2.png" alt="EcoTrail"/>
+        </div>
+        <div class="popup-desc" >
+          <p>EcoTrail is a mobile app designed to encourage and promote eco-friendly habits by helping users track their carbon footprint. 
+            Built with Flutter, the app provides an intuitive interface that allows users to input their daily activities, such as transportation
+             and energy usage, and calculate their environmental impact. 
+            Through machine learning algorithms, EcoTrail analyzes the user's behavior and offers actionable, personalized recommendations for reducing emissions. Gamification elements, such as achievement badges and challenges, further motivate users to adopt sustainable practices. 
+            The app also features a real-time carbon footprint tracker, with data stored securely via Firebase and synced across devices.</p>
+          </div>
+      </template>
+    </PopupPost>
   </div>
-  
+ </div>
+
+
+ <div class="popup-holder">
+  <PopupPost v-if="activePopup === 'ProjectNexus'" @close="closePopup">
+    <template #content>
+      <h2>ProjectNexus</h2>
+      <div class="img_container">
+        <img src="@/assets/1.jpg" alt="nexus"/>
+      </div>
+      <div class="popup-desc" >
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis architecto blanditiis adipisci repellendus modi ratione, voluptates nemo quas maiores laborum, molestiae accusantium sed dicta, commodi deserunt odit fugit officia consequatur.
+        </p>
+        </div>
+    </template>
+  </PopupPost>
+  </div>
+</div>
+</div>
+
 
   <!--<HelloWorld msg="Welcome to Your Vue.js App"/> -->
 </template>
@@ -71,19 +113,51 @@
 //import HelloWorld from './components/HelloWorld.vue'
 import IntroPlate from './components/IntroPlate.vue'
 import InfoPost from './components/InfoPost.vue'
-
+import PopupPost from './components/PopupPost.vue'
 
 export default {
   name: 'App',
   components: {
     IntroPlate,
-    InfoPost
+    InfoPost,
+    PopupPost
   },
-
+  data() {
+    return {
+      activePopup: null, // Store the active popup to determine which one to show
+    };
+  },
+  methods: {
+    showProject(project) {
+      this.activePopup = project; // Set the active popup to the selected project
+    },
+    closePopup() {
+      this.activePopup = null; // Close the popup
+    }
+  }
 }
 </script>
 
 <style>
+
+.content{
+  width: 85%;
+  margin: auto;
+}
+
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 body{
  background-image: linear-gradient(black, rgb(126, 115, 115));
 }
@@ -99,6 +173,11 @@ body{
   align-items: stretch;
   height: 100%;
   margin-bottom: 15px;
+}
+
+
+img{
+  border-radius: 15px;  
 }
 
 .styled-button {
@@ -117,6 +196,7 @@ body{
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   
 }
+
 
 
 
@@ -158,11 +238,10 @@ body{
 
 
 .ItemHolder {
-  
   background-color:  rgb(126, 115, 115);
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 columns, each with equal width */
-  gap: 10px; /* Adds space between the items */
+  gap: 20px; /* Adds space between the items */
   margin-bottom: 15%;
   width: 100%;
   margin: auto;
@@ -213,6 +292,14 @@ body{
 .itemPost:hover {
   animation: wiggle 0.3s ease-in-out; /* Add the wiggle animation */
   cursor: pointer; /* Change the cursor to pointer for better UX */
+  
 }
+
+.popup-desc{
+  text-align: left;
+  width: 50%;
+  margin: auto;
+}
+
 
 </style>

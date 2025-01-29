@@ -39,7 +39,7 @@
   
   div {
     color: white;
-    background-color: black;  
+ 
     border-radius: 5%;
 
   }
@@ -51,7 +51,7 @@
     width: 100%; /* Make it span the full width of the parent */
     height: auto;
     margin-bottom: 20px; /* Add some space below the image */
-    
+
   }
 
   .infoPost-container {
@@ -63,9 +63,13 @@
     padding: 20px;
     box-sizing: border-box;  /* To ensure padding doesn't affect the sizing */
     text-align: center; /* Center-align text content */ /* Space out content if needed */
-    box-shadow: 1 4px 111px rgba(0, 0, 0, 0.1); /* Optional, for a nice shadow effect */
-    
+    background-color: black;
   }
+
+  .infoPost-container:hover{
+    background-color: rgb(73, 73, 73);
+  }
+
   img {
     max-width: 100%; /* Prevent the image from exceeding its container width */
     max-height: 200px; /* Limit the height of the image */
