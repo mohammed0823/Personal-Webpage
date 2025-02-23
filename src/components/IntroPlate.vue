@@ -4,7 +4,7 @@
             <img  class="facePic" src="@/assets/me.jpg">
         </div>
         <div class="imSoCool">
-             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores consequatur voluptate aspernatur eligendi fugit perspiciatis nesciunt natus provident voluptatum quam tenetur sed consequuntur ducimus praesentium, illum est iusto laudantium vel!</p>
+             <p>Hello! I’m Mohammed Albattah, a junior double majoring in Computer Science and Mathematics at Penn State. I have experience in software development, data analysis, and system design, with proficiency in Python, C++, Java, SQL, and more. I’m especially interested in machine learning, system programming, and AI-driven solutions. Outside of school and coding, I love staying active, whether it’s hitting the gym, rock climbing, or going on hikes to unwind. I’m always excited to connect with others who share a passion for technology, so let’s chat and explore new ideas together!</p>
         </div>
     </div>
   </template>
